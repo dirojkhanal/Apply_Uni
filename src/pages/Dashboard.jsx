@@ -38,7 +38,7 @@ const Dashboard = () => {
           <img
             src={
               student.photo
-                ? `https://applyuni.genesiswtech.com/crmSystem/public/storage/${student.photo}`
+                ? `${import.meta.env.VITE_API_URL}/storage/${student.photo}`
                 : "/default-avatar.png"
             }
             alt="Profile"
@@ -87,6 +87,11 @@ const Dashboard = () => {
             <p>{student.contactnumber || "-"}</p>
           </div>
         </div>
+
+        {/* Logout */}
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );
